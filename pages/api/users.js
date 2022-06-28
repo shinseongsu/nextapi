@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-  const { apiUrl } = req.body;
+  const { apiUrl } = req.query;
 
   let httpsAgent = new https.Agent({
     rejectUnauthorized: false,
