@@ -8,7 +8,7 @@ export default function userHandler(req, res) {
     query: { id, name },
     method
   } = req
-  const { apiUrl } = req.query;
+  const { apiUrl } = req.body;
   console.log(apiUrl);
       
 
