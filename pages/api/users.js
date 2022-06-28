@@ -7,6 +7,7 @@ import path from 'path';
 export default function handler(req, res) {
   const { apiUrl } = req.body;
 
+  try {
   let httpsAgent = new https.Agent({
     rejectUnauthorized: false,
     cert: `-----BEGIN CERTIFICATE-----
@@ -89,4 +90,7 @@ export default function handler(req, res) {
     }
   );
   res.status(200).json(response.data);
+  } catch (e) {
+    res.status(500)
+  }
 }
