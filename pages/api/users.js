@@ -28,7 +28,5 @@ export default function handler(req, res) {
       httpsAgent
     }
   );
-
-
-  res.status(200).json(response)
+  res.status(200).json(response.data);
 }
